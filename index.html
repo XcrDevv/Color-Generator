@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Open+Sans:wght@300;400;700&family=Poppins&display=swap" rel="stylesheet">
+    <title>Color Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="circle-bg">  
+            <div id="circle"></div>
+        </div>
+        <input type="text" id="box", value="rgb(0, 0, 0)" readonly>
+        <div class="section-modes">
+            <div class="mode-selector">
+                <nav>
+                    <ul class="tabs">
+                        <li class="tab is-active">
+                            <a data-switcher data-tab="1">RGB</a>
+                        </li>
+                        <li class="tab">
+                            <a data-switcher data-tab="2">HSV</a>
+                        </li>
+                        <li class="tab">
+                            <a data-switcher data-tab="3">HSL</a>
+                        </li>
+                        <li class="tab">
+                            <a data-switcher data-tab="4">HEX</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="modes">
+                <div class="mode is-active" data-mode="1">
+                    <input type="range" id="a" value="0" min="0" max="255">
+                    <input type="range" id="b" value="0" min="0" max="255">
+                    <input type="range" id="c" value="0" min="0" max="255">
+                    <div class="alpha-slider">
+                        <input type="range" id="d" value="1" min="0" max="1" step=0.001>
+                    </div>
+                </div>
+                <div class="mode" data-mode="2">
+                    <input type="range" id="a" value="0" min="0" max="360">
+                    <input type="range" id="b" value="0" min="0" max="100">
+                    <input type="range" id="c" value="0" min="0" max="100">
+                    <div class="alpha-slider">
+                        <input type="range" id="d" value="1" min="0" max="1" step=0.001>
+                    </div>
+                </div>
+                <div class="mode" data-mode="3">
+                    <input type="range" id="a" value="0" min="0" max="360">
+                    <input type="range" id="b" value="1" min="1" max="100">
+                    <input type="range" id="c" value="0" min="0" max="100">
+                    <div class="alpha-slider">
+                        <input type="range" id="d" value="1" min="0" max="1" step=0.001>
+                    </div>
+                </div>
+                <div class="mode" data-mode="4">
+                    <input type="range" id="a" value="0" min="0" max="255">
+                    <input type="range" id="b" value="0" min="0" max="255">
+                    <input type="range" id="c" value="0" min="0" max="255">
+                    <div class="alpha-slider">
+                        <input type="range" id="d" value="1" min="0" max="1" step=0.001>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btns-container">
+            <div id="format-container">
+                <div id="prev" class="arrow"><</div>
+                <div id="format">Format: F(n)</div>
+                <div id="next" class="arrow">></div>
+            </div>
+            <button id="copy-btn">Copy <i class='bx bx-check-circle check-ico-0' id="check-ico"></i></button>
+        </div>
+    </div>
+    <div class="themes">
+        <div class="theme-c">
+            <div id="color1" class="theme" color-value="0"></div>
+        </div>
+        <div class="theme-c">
+            <div id="color1" class="theme" color-value="1"></div>
+        </div>
+        <div class="theme-c">
+            <div id="color2" class="theme" color-value="2"></div>
+        </div>
+        <div class="theme-c">
+            <div id="color3" class="theme" color-value="3"></div>
+        </div>
+        <div class="theme-c">
+            <div id="color4" class="theme active-color" color-value="4"></div>
+        </div>
+    </div>
+    <script src="js/color_manager.js"></script>
+    <script src="js/switcher.js"></script>
+</body>
+</html>
