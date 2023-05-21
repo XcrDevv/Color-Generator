@@ -164,6 +164,7 @@ body {
     background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
 }
 
+
 .main input[type="range"] {
     appearance: none;
     height: 10px;
@@ -189,6 +190,20 @@ body {
     width: 60%;
     display: flex;
     justify-content: space-between;
+}
+
+.rng {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rng h4 {
+    font-size: 12px;
+    font-weight: 100;
+    margin-right: 6px;
+    width: 4%;
 }
 
 #format-container {
@@ -286,10 +301,10 @@ body {
     color: #000;
 }
 
-.themes {
+.themes-handler {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     position: absolute;
     width: 50px;
@@ -299,6 +314,7 @@ body {
     margin-right: 350px;
     place-items: center;
     border-radius: 10px;
+    justify-items: center;
 }
 
 .theme {
@@ -327,6 +343,21 @@ body {
     height: 20px;
     border-radius: 50%;
     background-color: rgb(18, 19, 23);
-    margin-top: 25%;
+    margin-top: 64%;
     cursor: pointer;
+}
+
+.theme-text h3 {
+    writing-mode: vertical-lr;
+    font-weight: 100;
+    color: #fff;
+    writing-mode: vertical-rl; 
+    transform: rotate(180deg); 
+    letter-spacing: 7px;
+}
+
+.theme-line {
+    height: 25%;
+    width: 1px;
+    background-color: #fff;
 }
