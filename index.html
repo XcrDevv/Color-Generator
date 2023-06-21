@@ -11,13 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Open+Sans:wght@300;400;700&family=Poppins&display=swap" rel="stylesheet">
     <title>Color Generator</title>
     <link rel="stylesheet" href="css/style.css">
+    <meta name="color-scheme" content="dark">
+    <link rel="shortcut icon" href="/source/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/source/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="main">
         <div class="circle-bg">  
             <div id="circle"></div>
         </div>
-        <input type="text" id="box", value="rgb(0, 0, 0)" readonly>
+        <input type="text" id="box", value="rgb(0, 0, 0, 0)" readonly>
         <div class="section-modes">
             <div class="mode-selector">
                 <nav>
@@ -41,84 +44,88 @@
                 <div class="mode is-active" data-mode="1">
                     <div class="rng">
                         <h4>R</h4>
-                        <input type="range" id="a" value="0" min="0" max="255">
+                        <input type="range" id="a" value="0" min="0" max="255" mode="rgba">
                     </div>
                     <div class="rng">
                         <h4>G</h4>
-                        <input type="range" id="b" value="0" min="0" max="255">
+                        <input type="range" id="b" value="0" min="0" max="255" mode="rgba">
                     </div>
                     <div class="rng">
                         <h4>B</h4>
-                        <input type="range" id="c" value="0" min="0" max="255">
+                        <input type="range" id="c" value="0" min="0" max="255" mode="rgba">
                     </div>
                     <div class="rng">
                         <h4>A</h4>
                         <div class="alpha-slider rng">
-                            <input type="range" id="d" value="1" min="0" max="1" step=0.001>
+                            <input type="range" id="d" value="1" min="0" max="1" step=0.001 mode="rgba">
                         </div>
                     </div>
                 </div>
                 <div class="mode" data-mode="2">
                     <div class="rng">
                         <h4>H</h4>
-                        <input type="range" id="a" value="0" min="0" max="360">
+                        <input type="range" id="a" value="0" min="0" max="360" mode="hsva">
                     </div>
                     <div class="rng">
                         <h4>S</h4>
-                        <input type="range" id="b" value="0" min="0" max="100">
+                        <input type="range" id="b" value="0" min="0" max="100" mode="hsva">
                     </div>
                     <div class="rng">
                         <h4>V</h4>
-                        <input type="range" id="c" value="0" min="0" max="100">
+                        <input type="range" id="c" value="0" min="0" max="100" mode="hsva">
                     </div>
                     <div class="rng">
                         <h4>A</h4>
                         <div class="alpha-slider rng">
-                            <input type="range" id="d" value="1" min="0" max="1" step=0.001>
+                            <input type="range" id="d" value="1" min="0" max="1" step=0.001 mode="hsva">
                         </div>
                     </div>
                 </div>
                 <div class="mode" data-mode="3">
                     <div class="rng">
                         <h4>H</h4>
-                        <input type="range" id="a" value="0" min="0" max="360">
+                        <input type="range" id="a" value="0" min="0" max="360" mode="hsla">
                     </div>
                     <div class="rng">
                         <h4>S</h4>
-                        <input type="range" id="b" value="1" min="1" max="100">
+                        <input type="range" id="b" value="1" min="1" max="100" mode="hsla">
                     </div>
                     <div class="rng">
                         <h4>L</h4>
-                        <input type="range" id="c" value="0" min="0" max="100">
+                        <input type="range" id="c" value="0" min="0" max="100" mode="hsla">
                     </div>
                     <div class="rng">
                         <h4>A</h4>
                         <div class="alpha-slider rng">
-                            <input type="range" id="d" value="1" min="0" max="1" step=0.001>
+                            <input type="range" id="d" value="1" min="0" max="1" step=0.001 mode="hsla">
                         </div>
                     </div>
                 </div>
                 <div class="mode" data-mode="4">
                     <div class="rng">
                         <h4>R</h4>
-                        <input type="range" id="a" value="0" min="0" max="255">
+                        <input type="range" id="a" value="0" min="0" max="255" mode="hex">
                     </div>
                     <div class="rng">
                         <h4>G</h4>
-                        <input type="range" id="b" value="0" min="0" max="255">
+                        <input type="range" id="b" value="0" min="0" max="255" mode="hex">
                     </div>
                     <div class="rng">
                         <h4>B</h4>
-                        <input type="range" id="c" value="0" min="0" max="255">
+                        <input type="range" id="c" value="0" min="0" max="255" mode="hex">
                     </div>
                     <div class="rng">
                         <h4>A</h4>
                         <div class="alpha-slider rng">
-                            <input type="range" id="d" value="1" min="0" max="1" step=0.001>
+                            <input type="range" id="d" value="1" min="0" max="1" step=0.001 mode="hex">
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="checkbox-container">
+            <label>alpha</label>
+            <input type="checkbox" id="alpla-check">
         </div>
         <div class="btns-container">
             <div id="format-container">
@@ -152,7 +159,9 @@
             </div>
         </div>
     </div>
-    <script src="js/color_manager.js"></script>
-    <script src="js/switcher.js"></script>
+    <script src="js/colorManager.js" type="module" defer></script>
+    <script src="js/colorModeSwitcher.js" type="module" defer></script>
+    <script src="js/copyText.js" type="module" defer></script>
+    <script src="js/pageTheme.js" type="module" defer></script>
 </body>
 </html>

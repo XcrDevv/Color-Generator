@@ -22,7 +22,7 @@ body {
 
 .main {
     width: 400px;
-    height: 450px;
+    height: 470px;
     padding-bottom: 2%;
     padding-top: 2%;
     display: grid;
@@ -159,7 +159,6 @@ body {
         linear-gradient(-45deg, transparent 75%, #121417 75%
     
     );
-    border-radius: 10px;
     background-size: 10px 10px;
     background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
 }
@@ -169,21 +168,54 @@ body {
     appearance: none;
     height: 10px;
     width: 100%;
-    border-radius: 10px;
     outline: none;
 }
 
 .main input[type="range" i]::-webkit-slider-thumb {
-    appearance: none;
+    -webkit-appearance: none;
     width: 25px;
     height: 25px;
     background-color: #fff;
-    border-radius: 50%;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 #a, #b, #c {
     margin: 10px 0;
+}
+
+#d {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.checkbox-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.checkbox-container label {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--themeColor);
+}
+
+.checkbox-container input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid var(--themeColor);
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: var(--themeColor);
 }
 
 .btns-container{
@@ -212,6 +244,7 @@ body {
     outline: none;
     background-color: var(--themeColor);
     transition: background-color 0.1s ease-in-out;
+    -webkit-border-radius: 5px;
     border-radius: 5px;
     color: #000;
     font-size: 0.7em;
@@ -237,14 +270,17 @@ body {
     font-size: 22px;
     cursor: pointer;
     user-select: none;
+    -webkit-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
 }
 
 #prev {
+    -webkit-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
 }
 
 #next {
+    -webkit-border-radius: 0 4px 4px 0;
     border-radius: 0 4px 4px 0;
 }
 
@@ -276,6 +312,7 @@ body {
     border: 2px solid var(--themeColor);
     transition: background-color 0.3s ease-in-out;
     border-radius: 5px;
+    -webkit-border-radius: 5px;
     color: var(--themeColor);
     font-size: 1em;
     cursor: pointer;
@@ -320,9 +357,10 @@ body {
 .theme {
     width: 20%;
     height: 20%;
-    border-radius: 50%;
     background-color: var(--themeColor);
     transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 
 .theme.active-color{
@@ -342,6 +380,7 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    -webkit-border-radius: 50%;
     background-color: rgb(18, 19, 23);
     margin-top: 64%;
     cursor: pointer;
@@ -360,4 +399,35 @@ body {
     height: 25%;
     width: 1px;
     background-color: #fff;
+}
+
+@media screen and (max-width:720px) {
+
+    .main {
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .themes-handler {
+        height: 90%;
+        margin-right: calc(100vw - 50px);
+
+    }
+
+    .theme-line {
+        height: 50%;
+    }
+
+    .theme-c {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .mode-selector nav .tabs .tab a[data-switcher] {
+        display: flex;
+        height: 36px;
+        align-items: center;
+    }
 }
